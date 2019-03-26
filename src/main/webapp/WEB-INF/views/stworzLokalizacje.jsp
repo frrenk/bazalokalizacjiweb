@@ -9,7 +9,7 @@
 
 <body>
 
-<form action="saveLok" method="post">
+<form action="zapiszLok" method="post">
     <pre>
     Id:           <input type="text" name="id"/><br>
     Kod Pocztowy: <input type="text" name="kod"/><br>
@@ -21,6 +21,6 @@
 </form>
 ${msg}
 
-<a href="displayLokalizacje">Pokaż wszystkie</a>
+<a href="pokazLokalizacje">Pokaż wszystkie</a>
 </body>
 </html>

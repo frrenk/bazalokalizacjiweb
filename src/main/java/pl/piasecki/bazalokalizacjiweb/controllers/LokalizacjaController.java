@@ -17,51 +17,51 @@ public class LokalizacjaController {
     @Autowired
     LokalizacjaService service;
 
-    @RequestMapping("/showStworz")
-    public String showStworz() {
+    @RequestMapping("/pokazStworz")
+    public String pokazStworz() {
         return "stworzLokalizacje";
     }
 
-    @RequestMapping("/saveLok")
-    public String saveLokalizacja(@ModelAttribute("lokalizacja") Lokalizacja lokalizacja, ModelMap modelMap) {
+    @RequestMapping("/zapiszLok")
+    public String zapiszLokalizacje(@ModelAttribute("lokalizacja") Lokalizacja lokalizacja, ModelMap modelMap) {
         Lokalizacja lokalizacjaS = service.saveLokalizacja(lokalizacja);
         String msg = "Lokalizacja zapisana z id: "+lokalizacjaS.getId();
         modelMap.addAttribute("msg", msg);
         return "stworzLokalizacje";
     }
 
-    @RequestMapping("/displayLokalizacje")
-    public String displayLokalizacja(ModelMap modelMap) {
+    @RequestMapping("/pokazLokalizacje")
+    public String pokazLokalizacje(ModelMap modelMap) {
         List<Lokalizacja> lokalizacje = service.getAllLokalizacja();
         modelMap.addAttribute("lokalizacje", lokalizacje);
 
-        return "displayLokalizacje";
+        return "pokazLokalizacje";
     }
 
-    @RequestMapping("/deleteLokalizacja")
-    public String deleteLokalizacja(@RequestParam("id") int id, ModelMap modelMap) {
+    @RequestMapping("/usunLokalizacje")
+    public String usunLokalizacje(@RequestParam("id") int id, ModelMap modelMap) {
         Lokalizacja lokalizacja = service.getLokalizacjaById(id);
         service.deleteLokalizacja(lokalizacja);
         List<Lokalizacja> lokalizacje = service.getAllLokalizacja();
         modelMap.addAttribute("lokalizacje", lokalizacje);
 
-        return "displayLokalizacje";
+        return "pokazLokalizacje";
     }
 
-    @RequestMapping("/updateLokalizacja")
-    public String showAktualizuj(@RequestParam("id") int id, ModelMap modelMap) {
+    @RequestMapping("/aktualizujLokalizacje")
+    public String pokazAktualizuj(@RequestParam("id") int id, ModelMap modelMap) {
         Lokalizacja lok = service.getLokalizacjaById(id);
         modelMap.addAttribute("lokalizacja", lok);
-        return "editLokalizacje";
+        return "edytujLokalizacje";
 
     }
 
-    @RequestMapping("/updateLok")
-    public String updateLokalizacja(@ModelAttribute("lokalizacja") Lokalizacja lokalizacja, ModelMap modelMap) {
+    @RequestMapping("/aktualizujLok")
+    public String aktualizujLokalizacje(@ModelAttribute("lokalizacja") Lokalizacja lokalizacja, ModelMap modelMap) {
         service.updateLokalizacja(lokalizacja);
         List<Lokalizacja> lokalizacje = service.getAllLokalizacja();
         modelMap.addAttribute("lokalizacje", lokalizacje);
-        return "displayLokalizacje";
+        return "pokazLokalizacje";
 
     }
 }

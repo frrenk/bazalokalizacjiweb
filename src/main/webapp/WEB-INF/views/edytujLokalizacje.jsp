@@ -11,7 +11,7 @@
 
 <body>
 
-<form action="updateLok" method="post">
+<form action="aktualizujLok" method="post">
     <pre>
     Id:           <input type="text" name="id" value="${lokalizacja.id}" readonly="true"/><br>
     Kod Pocztowy: <input type="text" name="kod"value="${lokalizacja.kod}"/><br>

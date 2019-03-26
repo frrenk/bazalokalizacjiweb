@@ -27,13 +27,13 @@
         <td>${lokalizacja.kod}</td>
         <td>${lokalizacja.nazwa}</td>
         <td>${lokalizacja.rodzaj}</td>
-        <td><a href="deleteLokalizacja?id=${lokalizacja.id}">Usuń Lokalizację</a> </td>
-        <td><a href="updateLokalizacja?id=${lokalizacja.id}">Aktualizuj Lokalizację</a> </td>
+        <td><a href="usunLokalizacje?id=${lokalizacja.id}">Usuń Lokalizację</a> </td>
+        <td><a href="aktualizujLokalizacje?id=${lokalizacja.id}">Aktualizuj Lokalizację</a> </td>
     </tr>
         </c:forEach>
 </table>
 <br><br>
-<a href="showStworz">Dodaj Lokalizację</a>
+<a href="pokazStworz">Dodaj Lokalizację</a>
 
 </body>
 
